@@ -76,8 +76,7 @@ Update `settings.json`:
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
-
-
+```
 
 Reload the editor:
 
