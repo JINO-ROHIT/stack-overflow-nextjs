@@ -1,61 +1,86 @@
-### Configuring eslint and prettier
+### Configuring ESLint and Prettier
 
+#### ESLint Configuration
 
-Add a eslint config
+1. Install `eslint-config-standard`:
+    ```bash
+    npm install eslint-config-standard
+    ```
 
-1. npm install eslint-config-standard
-2. add to eslintrc.json config
+2. Update `eslintrc.json` configuration:
+    ```json
+    {
+      "extends": ["next/core-web-vitals", "standard"]
+    }
+    ```
 
+3. Test ESLint:
+    ```bash
+    npm run lint
+    ```
+
+#### ESLint for Tailwind CSS
+
+1. Install `eslint-plugin-tailwindcss`:
+    ```bash
+    npm install eslint-plugin-tailwindcss
+    ```
+
+2. Update `eslintrc.json` configuration:
+    ```json
+    {
+      "extends": [
+        "next/core-web-vitals",
+        "standard",
+        "plugin:tailwindcss/recommended"
+      ]
+    }
+    ```
+
+#### Prettier Configuration
+
+1. Install `eslint-config-prettier`:
+    ```bash
+    npm install eslint-config-prettier
+    ```
+
+2. Update `eslintrc.json` configuration:
+    ```json
+    {
+      "extends": [
+        "next/core-web-vitals",
+        "standard",
+        "plugin:tailwindcss/recommended",
+        "prettier"
+      ]
+    }
+    ```
+
+3. Install `prettier`:
+    ```bash
+    npm install prettier
+    ```
+
+#### VS Code Configuration
+
+Update `settings.json`:
+```json
 {
-  "extends": ["next/core-web-vitals", "standard"]
-}
-
-3. test
-
-npm run lint
-
-
-Add eslint for tailwindcss
-
-1. npm install eslint-plugin-tailwindcss
-2. add to eslint config
-
-{
-  "extends": ["next/core-web-vitals", 
-              "standard",
-              "plugin:tailwindcss/recommended"]
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.addMissingImports": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
 
 
-for prettier
 
-1. npm install eslint-config-prettier
-2. {
-  "extends": ["next/core-web-vitals", 
-              "standard",
-              "plugin:tailwindcss/recommended",
-              "prettier"]
-}
+Reload the editor:
 
-3. npm install prettier
-
-
-
-change vs config file
-
-add in settings.json
-
-"editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnType": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
-        "source.addMissingImports": true
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-
-
-ctrl + shift + p ---> then reload
-
-save to fix the issues each time.
+Press Ctrl + Shift + P.
+Select Reload Window.
+Now, saving your files will automatically fix the issues and format the code.
