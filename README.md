@@ -1,3 +1,5 @@
-### Configuring ESLint and Prettier
+### Clerk with nextjs
 
-Use route groups by enclosing within brackets (check auth)
+
+https://clerk.com/docs/quickstarts/nextjs
+
